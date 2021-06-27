@@ -1,6 +1,6 @@
 import requests
 from pprint import pprint
-from keys import TEQUILA_API_KEY
+from keys.keys import TEQUILA_API_KEY
 
 TEQUILA_URL = 'https://tequila-api.kiwi.com/locations/query'
 TEQUILA_HEADER = {
