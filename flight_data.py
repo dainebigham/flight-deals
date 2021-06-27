@@ -1,7 +1,9 @@
+from flight_search import TEQUILA_URL
 import requests
-
-TEQUILA_SEARCH_URL = 'https://tequila-api.kiwi.com/v2/search'
+from keys.keys import TEQUILA_API_KEY
 
 class FlightData:
     def __init__(self):
-        pass
+        self.departure_code = 'AKL'
+        self.departure_city = 'Auckland'
+        self.price = 0
