@@ -1,0 +1,2 @@
+TEQUILA_API_KEY = 'X4cIvyhMKsAwVcln2Aze9oJgy6pNpCiv'
+SHEETY_BEARER_KEY = 'Bearer o7Ms7fMJJ@QKca%C'

@@ -1,9 +1,10 @@
 import requests
 from pprint import pprint
+from keys import TEQUILA_API_KEY
 
 TEQUILA_URL = 'https://tequila-api.kiwi.com/locations/query'
-TEGUILA_HEADER = {
-    'apikey': ''
+TEQUILA_HEADER = {
+    'apikey': TEQUILA_API_KEY
 }
 
 class FlightSearch:
@@ -12,7 +13,7 @@ class FlightSearch:
 
     def get_iata_code(self, city):
 
-        response = requests.get(f'{TEQUILA_URL}?term={city}', headers=TEGUILA_HEADER)
+        response = requests.get(f'{TEQUILA_URL}?term={city}', headers=TEQUILA_HEADER)
         data = response.json()
         iata_code = data['locations'][0]['code']
 

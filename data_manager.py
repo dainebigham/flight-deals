@@ -1,10 +1,10 @@
 import requests
 from flight_data import FlightData
-from pprint import pprint
+from keys import SHEETY_BEARER_KEY
 
 SHEETY_URL = 'https://api.sheety.co/d8532f7b374806aaec629327e09e1945/flightData/flights'
 SHEETY_HEADER = {
-    'Authorization': 'Bearer '
+    'Authorization': SHEETY_BEARER_KEY
 }
 
 class DataManager:
