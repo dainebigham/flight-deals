@@ -1,11 +1,13 @@
 import requests
 
 class FlightSearch:
-    def __init__(self, city):
+    def __init__(self):
         pass
 
-    def testing(self):
-        return 'TESTING'
+    def get_iata_code(self, city):
+        code = 'TESTING'
+
+        return code
 
 
 

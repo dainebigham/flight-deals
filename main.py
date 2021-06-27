@@ -1,33 +1,15 @@
 from data_manager import DataManager
-import requests
-from flight_data import FlightData
 from flight_search import FlightSearch
-from data_manager import DataManager
-
-flight_data = FlightData()
-sheety_data = flight_data.flight_data
-prices = flight_data.prices
-
-new_sheety_data = {}
-new_sheety_data['flight'] = sheety_data.pop('flights')
-
-for flight in new_sheety_data['flight']:
-    if flight['iataCode'] == '':
-        flight['iataCode'] = FlightSearch(flight['city']).testing() 
-
-test_data = {
-    'flight': [
-            {
-            'city': 'London',
-            'iataCode': 'TESTING',
-            'lowestPrice': 800,
-            'id': '2'
-        }
-    ]
-}
-
-print(test_data['flight'])
 
 data_manager = DataManager()
-data_manager.UpdateIataCode(test_data)
+
+sheety_data = data_manager.get_flight_data()
+
+if sheety_data[0]['iataCode'] == '':
+    flight_search = FlightSearch()
+    for row in sheety_data:
+        row['iataCode'] = flight_search.get_iata_code(row['city'])
+
+data_manager.destination_data = sheety_data
+data_manager.update_iata_code()
 
