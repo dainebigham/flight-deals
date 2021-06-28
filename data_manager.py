@@ -8,9 +8,6 @@ SHEETY_HEADER = {
 }
 
 class DataManager:
-    def __init__(self):
-        self.flight_data = FlightData()
-
     def get_flight_data(self): 
         response = requests.get(SHEETY_URL, headers=SHEETY_HEADER)
         data = response.json()
